@@ -1,0 +1,82 @@
+<ul id="menu">
+    <li>Menu1</li>
+    <li>Menu 2
+        <ul>
+            <li>Submenu 1
+                <ul>
+                    <li>SubSubmenu 1
+                        <ul>
+                            <li>SubSubSubmenu 1</li>
+                            <li>SubSubSubmenu 2</li>
+                        </ul>
+                    </li>
+                    <li>SubSubmenu 2
+                        <ul>
+                            <li>SubSubSubmenu 3</li>
+                            <li>SubSubSubmenu 4</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Submenu 2</li>
+        </ul>
+    </li>
+    <li>Menu 3</li>
+    <li>Menu 4
+        <ul>
+            <li>Submenu 4
+                <ul>
+                    <li>SubSubmenu 2</li>
+                    <li>SubSubmenu 3</li>
+                </ul>
+            </li>
+            <li>Submenu 5
+                <ul>
+                    <li>SubSubmenu 3</li>
+                    <li>SubSubmenu 4</li>
+                </ul>
+            </li>
+        </ul>
+
+    </li>
+</ul>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const menuItems = document.querySelectorAll('#menu li');
+
+    menuItems.forEach(item => {
+        item.addEventListener('click', function() {
+            if (item.querySelector('ul')) {
+                item.querySelector('ul').classList.toggle('show');
+            } else {
+                alert('Ссылка');
+            }
+        });
+    });
+});
+
+</script>
+
+<style>
+    #menu ul {
+        display: none;
+    }
+    #menu ul.show {
+        display: block;
+    }
+
+    #menu ul ul {
+        display: none;
+    }
+    #menu ul ul.show {
+        display: block;
+    }
+
+    #menu ul ul ul {
+        display: none;
+    }
+    #menu ul ul ul.show {
+        display: block;
+    }
+</style>
